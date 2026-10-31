@@ -56,19 +56,25 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 10px 0 13px;
+    padding: 0 7px 0 13px;
 
     background: linear-gradient(
         180deg,
-        #c9e5fa 0%,
-        #82b3d9 15%,
-        #396b98 50%,
-        #204565 100%
+        #e8f8ff 0%,
+        #b6e3fa 4%,
+        #77b9e5 16%,
+        #4b94c8 45%,
+        #286b9f 48%,
+        #174c79 100%
     );
 
-    border-bottom: 1px solid #a6c7e5;
+    border-bottom: 1px solid #a9d8f4;
 
-    text-shadow: 0 1px 2px #10243b;
+    box-shadow:
+        inset 0 1px 0 #ffffff,
+        inset 0 -1px 0 #17466c;
+
+    text-shadow: 0 1px 2px #123451;
     font-size: 13px;
 }
 
@@ -79,7 +85,11 @@ body {
     gap: 9px;
 
     font-weight: 600;
-    color: #fff;
+    color: white;
+
+    text-shadow:
+        0 1px 2px #163d5e,
+        0 0 5px #ffffff80;
 }
 
 .brand-icon {
@@ -111,11 +121,13 @@ body {
 .window-controls {
     display: flex;
     align-items: flex-start;
-    gap: 3px;
+    gap: 0;
+    height: 29px;
+    margin-top: -14px;
 }
 
 .window-controls button {
-    width: 27px;
+    width: 30px;
     height: 22px;
 
     display: grid;
@@ -123,44 +135,90 @@ body {
 
     padding: 0;
 
-    border: 1px solid #c4e1f5;
-    border-radius: 3px;
+    border: 1px solid #b5d8ed;
+    border-top: 0;
+    border-radius: 0;
 
     background: linear-gradient(
-        #b7d7ef,
-        #477aa8
+        180deg,
+        #d5efff 0%,
+        #8dc9ed 12%,
+        #3987c1 55%,
+        #21639c 100%
     );
 
-    color: white;
-    font-size: 15px;
-    line-height: 1;
-
     text-shadow: 0 1px 2px #123;
-
     box-shadow:
-        inset 0 1px #ffffff90,
-        0 1px 2px #0004;
+        inset 0 1px 0 #ffffff,
+        0 1px 3px #102d48;
+    
+    transition:
+        filter 150ms ease,
+        box-shadow 150ms ease,
+        background 150ms ease;
+}
+
+.window-controls button svg {
+    width: 12px;
+    height: 12px;
+
+    fill: none;
+    stroke: white;
+    stroke-width: 3;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+
+    filter: drop-shadow(0 1px 1px #123);
+}
+
+.window-controls .minimize svg {
+    transform: translateY(3px);
+}
+
+.window-controls button:first-child {
+    border-bottom-left-radius: 6px;
 }
 
 .window-controls button:hover {
     filter: brightness(1.2);
+
+    box-shadow:
+        inset 0 1px 3px #ffffff,
+        0 0 5px 2px #8bd8ff,
+        0 0 10px 2px #4ab5ff80;
+    
+    z-index: 1;
 }
 
 .window-controls .close {
+    width: 48px;
+    border-bottom-right-radius: 6px;
+
     background: linear-gradient(
-        #edb6ad,
-        #c65b50 50%,
-        #96352f
+        180deg,
+        #ffe5e0 0%,
+        #f28b80 15%,
+        #dc493d 55%,
+        #a91f19 100%
     );
 
-    border-color: #f0c0b8;
+    border-color: #f5b4ac;
 }
 
 .window-controls .close:hover {
+    filter: brightness(1.25);
+
+    box-shadow:
+        inset 0 1px 3px #ffffff,
+        0 0 8px 3px #ffb1a5,
+        0 0 18px 5px #ff514c90;
+    
     background: linear-gradient(
-        #ffded6,
-        #ed7565 50%,
-        #b63830
+        180deg,
+        #fff0ed,
+        #ffaaa0 15%,
+        #f34d3e 55%,
+        #c52a20
     );
 }
 
