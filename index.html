@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Curtains Media Visualiser</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <main class="player">
+            <header class="titlebar">
+                <div class="brand">
+                    <div class="brand-icon">C</div>
+                    <span>Curtains Media Visualiser</span>
+                </div>
+
+                <div class="window-controls">
+                    <button aria-label="Minimize">-</button>
+                    <button aria-label="Maximize">□</button>
+                    <button class="close" aria-label="Close">×</button>
+                </div>
+            </header>
+
+            <nav class="toolbar">
+                <div class="nav-tabs">
+                    <button class="tab">Now Playing</button>
+                    <button class="tab">Library</button>
+                </div>
+                <div class="toolbar-right">
+                    <span class="status">MEDIA PLAYER</span>
+                </div>
+            </nav>
+
+            <section class="content">
+                <div class="visual-area">
+                    <div class="empty-state">
+                        <div class="disc">
+                            <div class="disc-inner"></div>
+                        </div>
+                        <h2>Now Playing</h2>
+                        <p>Your music will appear here</p>
+                    </div>
+                </div>
+
+                <div class="track-info">
+                    <div class="track-art">♫</div>
+                    <div class="track-details">
+                        <div class="track-title" id="track-title">Nothing playing</div>
+                        <div class="track-subtitle" id="track-subtitle">Open a music file to get started</div>
+                    </div>
+                    <button class="open-button" id="open-file">
+                        <span>＋</span> Open file
+                    </button>
+                    <input type="file" id="file-input" accept=".mp3,audio/mpeg" hidden>
+                </div>
+            </section>
+
+            <footer class="player-controls">
+                <div class="timeline">
+                    <span id="current-time">0:00</span>
+                    <input type="range" id="seek" min="0" max="100" value="0">
+                    <span id="duration">0:00</span>
+                </div>
+
+                <div class="controls">
+                    <div class="control-group">
+                        <button id="back" title="Back 10 seconds">⏪</button>
+                        <button id="play" class="play-button" title="Play">▶</button>
+                        <button id="forward" title="Forward 10 seconds">⏩</button>
+                    </div>
+
+                    <div class="control-group-2">
+                        <button id="repeat" title="Repeat">⟳</button>
+                        <button id="fullscreen" title="Fullscreen">⛶</button>
+                    </div>
+                </div>
+            </footer>
+        </main>
+
+        <audio id="audio"></audio>
+    </body>
+</html>
