@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Curtains Media Visualiser</title>
         <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
     </head>
 
     <body>
@@ -36,7 +37,7 @@
 
             <nav class="toolbar">
                 <div class="nav-tabs">
-                    <button class="tab">Now Playing</button>
+                    <button class="tab active">Now Playing</button>
                     <button class="tab">Library</button>
                 </div>
                 <div class="toolbar-right">
@@ -77,9 +78,23 @@
 
                 <div class="controls">
                     <div class="control-group">
-                        <button id="back" title="Back 10 seconds">⏪</button>
-                        <button id="play" class="play-button" title="Play">▶</button>
-                        <button id="forward" title="Forward 10 seconds">⏩</button>
+                        <button id="back" title="Back 10 seconds">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M11 5L2 12L11 19V5Z"/>
+                                <path d="M22 5L13 12L22 19V5Z"/>
+                            </svg>
+                        </button>
+                        <button id="play" class="play-button" title="Play">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M13 5L22 12L13 19V5Z"/>
+                            </svg>
+                        </button>
+                        <button id="forward" title="Forward 10 seconds">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M13 5L22 12L13 19V5Z"/>
+                                <path d="M2 5L11 12L2 19V5Z"/>
+                            </svg>
+                        </button>
                     </div>
 
                     <div class="control-group-2">
