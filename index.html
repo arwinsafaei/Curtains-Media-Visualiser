@@ -72,7 +72,7 @@
             <footer class="player-controls">
                 <div class="timeline">
                     <span id="current-time">0:00</span>
-                    <input type="range" id="seek" min="0" max="100" value="0">
+                    <input type="range" id="seek" min="0" max="100" step="any" value="0">
                     <span id="duration">0:00</span>
                 </div>
 
@@ -86,7 +86,7 @@
                         </button>
                         <button id="play" class="play-button" title="Play">
                             <svg viewBox="0 0 24 24">
-                                <path d="M13 5L22 12L13 19V5Z"/>
+                                <path id="play-icon" d="M6 3L21 12L6 21V3Z"/>
                             </svg>
                         </button>
                         <button id="forward" title="Forward 10 seconds">
