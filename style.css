@@ -72,6 +72,98 @@ body {
     font-size: 13px;
 }
 
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    font-weight: 600;
+    color: #fff;
+}
+
+.brand-icon {
+    width: 23px;
+    height: 23px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+    border: 1px solid #d4efff;
+
+    background: linear-gradient(
+        145deg,
+        #b6e5ff,
+        #398bc5 55%,
+        #14365d
+    );
+
+    box-shadow:
+        0 1px 4px #0008,
+        inset 0 1px #ffffffa0;
+
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+.window-controls {
+    display: flex;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+.window-controls button {
+    width: 27px;
+    height: 22px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 0;
+
+    border: 1px solid #c4e1f5;
+    border-radius: 3px;
+
+    background: linear-gradient(
+        #b7d7ef,
+        #477aa8
+    );
+
+    color: white;
+    font-size: 15px;
+    line-height: 1;
+
+    text-shadow: 0 1px 2px #123;
+
+    box-shadow:
+        inset 0 1px #ffffff90,
+        0 1px 2px #0004;
+}
+
+.window-controls button:hover {
+    filter: brightness(1.2);
+}
+
+.window-controls .close {
+    background: linear-gradient(
+        #edb6ad,
+        #c65b50 50%,
+        #96352f
+    );
+
+    border-color: #f0c0b8;
+}
+
+.window-controls .close:hover {
+    background: linear-gradient(
+        #ffded6,
+        #ed7565 50%,
+        #b63830
+    );
+}
+
 button {
     color: inherit;
     cursor: pointer;
