@@ -22,7 +22,7 @@
                             <path d="M3 11.5H13"/>
                         </svg>
                     </button>
-                    <button aria-label="Maximize">
+                    <button id="maximize" aria-label="Maximize">
                         <svg viewBox="0 0 16 16" aria-hidden="true">
                             <rect x="2" y="3" width="12" height="9"/>
                         </svg>
@@ -98,8 +98,16 @@
                     </div>
 
                     <div class="control-group-2">
-                        <button id="repeat" title="Repeat">⟳</button>
-                        <button id="fullscreen" title="Fullscreen">⛶</button>
+                        <button id="repeat" title="Repeat">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path id="repeat-icon" d="M16 3L21 7L17 11 M21 7H7A4 4 0 0 0 3 11 M7 21L3 17L7 13 M3 17H17A4 4 0 0 0 21 13"/>
+                            </svg>
+                        </button>
+                        <button id="fullscreen" title="Fullscreen">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path id="fullscreen-icon" d="M3 9V3H9 M15 3H21V9 M21 15V21H15 M9 21H3V15"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </footer>

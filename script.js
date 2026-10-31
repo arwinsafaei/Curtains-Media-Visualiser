@@ -1,4 +1,6 @@
 const audio=document.getElementById("audio");
+const maximizeButton = document.getElementById("maximize");
+const maximizeIcon = document.getElementById("maximize-icon");
 const fileInput = document.getElementById("file-input");
 const trackTitle = document.getElementById("track-title");
 const trackSubtitle = document.getElementById("track-subtitle");
@@ -10,6 +12,12 @@ const backButton = document.getElementById("back");
 const playButton = document.getElementById("play");
 const playIcon = document.getElementById("play-icon");
 const forwardButton = document.getElementById("forward");
+const repeatButton = document.getElementById("repeat");
+const repeatIcon = document.getElementById("repeat-icon");
+const fullscreenButton = document.getElementById("fullscreen");
+const fullscreenIcon = document.getElementById("fullscreen-icon");
+
+let repeat = false;
 
 function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
@@ -29,6 +37,33 @@ function updateProgress() {
         requestAnimationFrame(updateProgress);
     }
 }
+
+async function toggleFullscreen() {
+    if(!document.fullscreenElement) {
+        await document.documentElement.requestFullscreen();
+    } else {
+        await document.exitFullscreen();
+    }
+}
+
+document.addEventListener("fullscreenchange", () => {
+    const isFullscreen = !!document.fullscreenElement;
+
+    maximizeButton.querySelector("svg").innerHTML =
+        isFullscreen
+            ? '<path d="M5 2H14V11 M2 5H11V14H2V5 M5 2V5 M11 11H14"/>'
+            : '<rect x="2" y="3" width="12" height="9" fill="none"/>';
+
+    fullscreenIcon.setAttribute(
+        "d",
+        isFullscreen
+            ? "M9 3V9H3 M15 3V9H21 M3 15H9V21 M21 15H15V21"
+            : "M3 9V3H9 M15 3H21V9 M21 15V21H15 M9 21H3V15"
+    );
+
+    maximizeButton.title = isFullscreen ? "Restore" : "Maximize";
+    fullscreenButton.title = isFullscreen ? "Exit fullscreen" : "Fullscreen";
+});
 
 audio.addEventListener("play", () => {
     playButton.title = "Pause";
@@ -64,6 +99,8 @@ audio.addEventListener("ended", () => {
     seek.style.setProperty("--progress", "100%");
     currentTime.textContent = formatTime(audio.duration);
 });
+
+maximizeButton.addEventListener("click", toggleFullscreen);
 
 fileInput.addEventListener("change", () => {
     const file = fileInput.files[0];
@@ -101,3 +138,11 @@ playButton.addEventListener("click", () => {
 forwardButton.addEventListener("click", () => {
     audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
 });
+
+repeatButton.addEventListener("click", () => {
+    repeat = !repeat;
+    audio.loop = repeat;
+    repeat.classList.toggle("active", repeat);
+});
+
+fullscreenButton.addEventListener("click", toggleFullscreen);
