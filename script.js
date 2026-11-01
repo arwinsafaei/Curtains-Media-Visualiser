@@ -1,4 +1,4 @@
-const audio=document.getElementById("audio");
+const audio = document.getElementById("audio");
 const maximizeButton = document.getElementById("maximize");
 const maximizeIcon = document.getElementById("maximize-icon");
 const fileInput = document.getElementById("file-input");
@@ -142,7 +142,7 @@ forwardButton.addEventListener("click", () => {
 repeatButton.addEventListener("click", () => {
     repeat = !repeat;
     audio.loop = repeat;
-    repeat.classList.toggle("active", repeat);
+    repeatButton.classList.toggle("active", repeat);
 });
 
 fullscreenButton.addEventListener("click", toggleFullscreen);
